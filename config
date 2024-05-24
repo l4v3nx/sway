@@ -1,0 +1,6 @@
+include ~/.config/sway/config.d/systemd-user.conf
+include ~/.config/sway/config.d/general.conf
+include ~/.config/sway/config.d/bar.conf
+include ~/.config/sway/config.d/execs.conf
+include ~/.config/sway/config.d/appearance.conf
+include ~/.config/sway/config.d/keybinds.conf
