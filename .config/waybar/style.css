@@ -1,0 +1,149 @@
+* {
+  border: none;
+  border-radius: 0;
+  font-family: "Lexend", "Material Design Icons";
+  font-size: 15px;
+  font-weight: 500;
+}
+
+@keyframes blink {
+  to {
+    background-color: @warning_bg_color;
+  }
+}
+
+window#waybar {
+  background: none;
+  transition-property: background-color;
+  transition-duration: 0.5s;
+}
+
+window#waybar.empty #window {
+  background-color: transparent;
+}
+
+widget>* {
+  margin-top: 8px;
+}
+
+tooltip {
+  border-radius: 8px;
+  background: @window_bg_color;
+}
+
+tooltip label {
+  color: @window_fg_color;
+}
+
+.modules-left>widget>* {
+  margin-left: 8px;
+}
+
+.modules-right>widget>* {
+  padding: 0 8px;
+  color: @accent_bg_color;
+  background-color: @headerbar_border_color;
+}
+
+#workspaces button {
+  padding: 0 8px;
+  margin-right: 6px;
+  color: @accent_bg_color;
+  background-color: @headerbar_border_color;
+  border-radius: 8px;
+}
+
+#workspaces button.focused {
+  background-color: @accent_bg_color;
+  color: @accent_fg_color;
+  border-bottom: none;
+}
+
+#workspaces button.urgent {
+  color: @window_bg_color;
+  animation-name: blink;
+  animation-duration: 0.5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+#window {
+  padding: 0 12px;
+  border-radius: 8px;
+  color: @accent_bg_color;
+  background-color: @headerbar_border_color;
+}
+
+#mode {
+  padding: 0 8px;
+  margin-left: 0px;
+  border-radius: 8px;
+  background-color: @accent_bg_color;
+  color: @accent_fg_color;
+}
+
+#battery {
+  padding: 0 6px;
+  padding-left: 8px;
+}
+
+#battery.critical:not(.charging) {
+  animation-name: blink;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+#clock {
+  padding-right: 10px;
+  border-radius: 0 8px 8px 0;
+  margin-right: 6px;
+}
+
+#mpris {
+  margin-left: 0px;
+  margin-right: 6px;
+  padding: 0 8px;
+  border-radius: 8px;
+  color: @accent_bg_color;
+  background-color: @headerbar_border_color;
+}
+
+#tray {
+  padding: 0 8px;
+  padding-bottom: 8px;
+  border-radius: 8px;
+  background-color: @headerbar_border_color;
+}
+
+#bluetooth {
+  padding: 0 6px;
+}
+
+#backlight {
+  padding-left: 0px;
+}
+
+#custom-media {
+  padding: 0 12px;
+  border-radius: 8px;
+  color: @accent_bg_color;
+  background-color: @headerbar_border_color;
+}
+
+#custom-audio_idle_inhibitor {
+  padding-left: 10px;
+  padding-right: 18px;
+  border-radius: 8px 0 0 8px;
+  margin-left: 6px;
+}
+
+#custom-power {
+  font-size: 18px;
+  padding: 0 8px;
+  padding-top: 2px;
+  border-radius: 8px;
+  margin-right: 8px;
+}
