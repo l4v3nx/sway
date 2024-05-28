@@ -1,0 +1,106 @@
+{
+  "layer": "top",
+  "reload_style_on_change": true,
+  "modules-left": ["sway/workspaces", "sway/mode", "mpris"],
+  // "modules-center": ["tray"],
+  "modules-right": ["sway/language", "bluetooth", "pulseaudio", "backlight", "network", "battery", "clock"],
+  "clock": {
+    "tooltip-format": "<big>󰸗  {:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+    "format": "󰅐 {:%b %d %H:%M}"
+  },
+  "backlight": {
+    "format": " {icon}  {percent}%",
+    "format-icons": ["", "", "", "", "", "", "", "", ""],
+    "on-scroll-up": "brightnessctl set +1",
+    "on-scroll-down": "brightnessctl set 1-",
+    "tooltip": false
+  },
+  "battery": {
+    "states": {
+      "warning": 20,
+      "critical": 5
+    },
+    "format": "{icon}  {capacity}%",
+    "format-charging": "󰂅 {capacity}%",
+    "format-plugged": "󰚥 {capacity}%",
+    "format-alt": "{icon} {time}",
+    "format-icons": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
+  },
+  "pulseaudio": {
+    "format": "{format_source} {icon} {volume}%",
+    "format-bluetooth": "{format_source} 󰗾 {volume}%",
+    "format-bluetooth-muted": "{format_source} 󰗿 ",
+    "format-muted": "{format_source}  ",
+    "format-source": "󰍬",
+    "format-source-muted": "󰍭",
+    "format-icons": {
+      "headphone": "󰋋",
+      "headset": "󱡏",
+      "default": ["󰕿", "󰖀", "󰕾"]
+    },
+    "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+    "on-click-right": "pavucontrol"
+  },
+  "network": {
+    "format": "{ifname}",
+    "format-wifi": "{icon} {essid} ({signalStrength}%)",
+    "format-ethernet": "󰈀  {ipaddr}",
+    "format-disconnected": "󰲜  Disconnected",
+    // "tooltip-format": "{ifname} via {gwaddr}",
+    "tooltip-format-wifi": "󰖩  {ifname}",
+    "tooltip-format-ethernet": "󰈀  {ifname}",
+    // "tooltip-format-disconnected": "󰲜  Disconnected",
+    "max-length": 30,
+    "on-click": "if [[ $(nmcli radio wifi) == 'enabled' ]]; then nmcli radio wifi off; else nmcli radio wifi on; fi",
+    "on-click-right": "env XDG_CURRENT_DESKTOP='gnome' gnome-control-center wifi",
+    "format-icons": ["󰤯", "󰤟", "󰤢", "󰤨"]
+  },
+  "sway/workspaces": {
+    "disable-scroll": true
+  },
+  "sway/language": {
+    "format": "󰗊 {short}",
+    "on-click": "swaymsg input type:keyboard xkb_switch_layout next",
+    "tooltip-format": "{long}"
+  },
+  "mpris": {
+    "format": "{status_icon} | {player_icon} {dynamic}",
+    "tooltip-format": "{status_icon} | {player_icon} {dynamic}",
+//    "tooltip-format-paused": "{status_icon} | {player_icon} {dynamic}",
+    "dynamic-order": ["title", "artist"],
+    "tooltip": true,
+    "player-icons": {
+      "spotify": "󰓇",
+      "kdeconnect": "󰒔",
+      // "brave": " ",
+      "firefox": "󰈹",
+      "plasma-browser-integration": "󰈹",
+      "TelegramDesktop": "",
+      "mpv": "  "
+    },
+    "status-icons": {
+      "playing": "󰐊",
+      "paused": "󰏤",
+      "stopped": "󰓛"
+    }
+  },
+  "tray": {
+    "show-passive-items": false,
+    "icon-size": 12,
+    "spacing": 10
+  },
+  "bluetooth": {
+    "on-click": "if [[ $(bluetoothctl show | grep 'Powered' | sed 's/^\tPowered://g') == ' yes' ]]; then rfkill block bluetooth; else rfkill unblock bluetooth; fi",
+    "on-click-right": "blueman-manager",
+    "format-disabled": " off",
+    "format-off": " off",
+    "format-on": " on",
+    "format-connected": " {device_alias}",
+    "format-connected-battery": " {device_alias} ({device_battery_percentage}%)",
+    // "format-device-preference": [ "device1", "device2" ],
+    "tooltip-format-on": "{num_connections} connected",
+    "tooltip-format-connected": "{num_connections} connected\n\n{device_enumerate}",
+    "tooltip-format-enumerate-connected": "{device_alias}",
+    "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_battery_percentage}%"
+  }
+}
