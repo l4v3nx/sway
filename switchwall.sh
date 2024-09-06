@@ -30,3 +30,5 @@ fi
 "$CONFIG_DIR"/scripts/color_generation/colorgen.sh "${imgpath}" --apply --smart
 
 sleep 1 && swaymsg reload
+pkill mako
+mako
