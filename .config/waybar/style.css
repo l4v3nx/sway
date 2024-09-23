@@ -85,7 +85,6 @@ tooltip label {
 
 #battery {
   padding: 0 6px;
-  padding-left: 8px;
 }
 
 #battery.critical:not(.charging) {
@@ -118,12 +117,21 @@ tooltip label {
   background-color: @headerbar_border_color;
 }
 
-#bluetooth {
+#bluetooth.on {
+  padding: 0 9px;
+}
+
+#bluetooth.disabled,
+#bluetooth.off {
   padding: 0 6px;
 }
 
 #backlight {
   padding-left: 0px;
+}
+
+#pulseaudio.muted {
+  padding: 0 6px;
 }
 
 #custom-media {
