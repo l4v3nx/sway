@@ -37,8 +37,8 @@
             "",
             ""
         ],
-        "on-scroll-up": "brightnessctl set +1",
-        "on-scroll-down": "brightnessctl set 1-",
+        "on-scroll-up": "brightnessctl set +4",
+        "on-scroll-down": "brightnessctl set 4-",
         "tooltip": false
     },
     "battery": {
