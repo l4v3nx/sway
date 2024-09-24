@@ -10,8 +10,8 @@
     //  "modules-center": ["sway/window"],
     "modules-right": [
         "tray",
-        "custom/audio_idle_inhibitor",
         "sway/language",
+        "custom/audio_idle_inhibitor",
         "pulseaudio",
         "backlight",
         "battery",
