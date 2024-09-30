@@ -131,7 +131,7 @@ tooltip label {
 }
 
 #pulseaudio.muted {
-  padding: 0 6px;
+  padding-right: 8px;
 }
 
 #pulseaudio.source {
