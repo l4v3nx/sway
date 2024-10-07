@@ -126,6 +126,10 @@ tooltip label {
   padding: 0 6px;
 }
 
+#bluetooth.connected {
+  padding-left: 6px;
+}
+
 #backlight {
   padding-left: 0px;
 }
