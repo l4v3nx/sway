@@ -22,7 +22,7 @@ elif [[ "$1" ]]; then
 else
   # Select and set image
 
-  cd "$(xdg-user-dir PICTURES)" || return 1
+  cd "$(xdg-user-dir PICTURES)/wallpapers" || return 1
   switch "$(yad --file --add-preview --large-preview --title='Choose wallpaper')"
 fi
 
